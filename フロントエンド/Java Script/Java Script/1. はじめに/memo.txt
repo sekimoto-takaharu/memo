@@ -1,0 +1,30 @@
+◎Java Scriptとは
+    JavaScriptエンジンによって事前コンパイル無しで実行されるプログラミング言語
+    ブラウザ上で実行される  
+
+◎Java JavaScriptエンジン
+    ①JSを解析
+    ②機械語を用意
+    ③実行
+
+◎JavaScriptエンジンの種類
+・V8エンジン→chrome、Edgeで使われている
+・SpiderMonkey→Firefoxで使われている
+・javaScriptCore→Safariで使われている
+
+
+◎Javascriptの歴史
+
+1995　NetScapeがjavaScriptを作成しNetscapae　navigator2に搭載
+1996　MicrosoftがJScriptを作成して、Internet Explorer3に搭載
+      ECMAインターナショナルにJavaScriptを提出
+1997  ECMASciptのリリース
+1998  ECMAScript2のリリース
+1999  ECMAScript3のリリース
+2000  ECMAScript4の議論を開始
+2008  ECMAScript4が破棄される
+      Google ChromerとV8エンジンのリリース
+2009  V8エンジンを利用してNode.jsを作成
+      ECMAScript5のリリース
+2015  ECMAScript  2015のリリース
+2016  ECMAScript  2016のリリース

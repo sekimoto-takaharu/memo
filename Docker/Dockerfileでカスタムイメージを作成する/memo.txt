@@ -1,0 +1,26 @@
+ docker image build -t {リポジトリ名}:{タグ名} .
+
+ apt -yは「質問のやり取りを排除」
+
+CMD ["実行ファイル", "パラメーター１", "パラメーター２", ...]
+    コンテナ実行時のデフォルトコマンドを設置する
+    Dockerfileで１度しか使えない
+    複数のCDMがある場合は最後のもののみ有効
+
+Dockerファイルの１つひとつの命令がレイヤという
+イメージの変更差分がレイヤーとして保存される
+
+＜例A＞
+RUN apt update
+RUN apt install -y curl
+RUN apt install -y vim
+CMD ["bash]
+
+＜例B＞
+RUN apt update && \
+    apt install -y curl \
+        vim
+CMD ["bash]
+
+例Aはレイヤは４つあるが、例Bはレイヤは２つ
+容量は例Bの方が少ないため、コンテナを立ち上げるのが早くなる

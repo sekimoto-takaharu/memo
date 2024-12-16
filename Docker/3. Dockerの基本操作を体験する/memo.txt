@@ -130,7 +130,7 @@
 
     これは、
         hello-world:latestというイメージがローカル環境に見つからないということ
-        hello-world:latestというイメージをインストールしました。
+        hello-world:latestというイメージをインストールしましたということ
 
 
 ◎Dockerイメージとは？？
