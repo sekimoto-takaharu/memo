@@ -1,0 +1,153 @@
+body {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  background-color: #303e4e;
+  color: white;
+  max-width: 800px;
+  padding: 60px 0 80px 15.6%;
+}
+.profile-container {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.profile-name {
+  font-size: 2.5rem;
+}
+.profile-image-container {
+  border-radius: 50%;
+  background: linear-gradient(319deg, #34d43a, #f9ca24);
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  margin-left: 120px;
+}
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+section {
+  opacity: 0%;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-reverse {
+  flex-direction: row-reverse;
+}
+.section-image {
+  width: 300px;
+}
+.section-description {
+  width: 400px;
+  line-height: 2rem;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+p {
+  margin: 0;
+}
+a {
+  color: #70f5cc;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s;
+}
+a:hover {
+  text-decoration-color: #70f5cc;
+}
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+}
+footer {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  margin-top: 64px;
+}
+
+@media (width <= 1163px) {
+  body {
+    padding: 20px 7.8% 40px 7.8%;
+  }
+  .profile-container {
+    height: 200px;
+  }
+  .profile-name {
+    font-size: 1.8rem;
+  }
+  .profile-image-container {
+    padding: 3px;
+    width: 65px;
+    height: 65px;
+    margin-left: 30px;
+  }
+}
+
+@media (width <= 962px) {
+  .profile-container {
+    height: 120px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    margin-bottom: 0px;
+  }
+  section {
+    margin-bottom: 40px;
+    display: block;
+  }
+  .section-reverse {
+    flex-direction: row;
+  }
+  .section-image {
+    width: 100%;
+    max-width: 300px;
+  }
+  .section-description {
+    width: 100%;
+  }
+}
+@media (width <= 410px) {
+  body {
+    padding: 10px 14px 20px 14px;
+  }
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  .profile-image-container {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (width <= 364px) {
+  .profile-name {
+    font-size: 1.3rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+}
+
+.fade-slide-animation {
+  animation: fade-slide 1.5s forwards;
+}
+
+@keyframes fade-slide {
+  from {
+    opacity: 0%;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
