@@ -307,3 +307,162 @@ body {
 ---
 
 ## レイアウトの構成を考えよう
+
+- レイアウトを設計する際には、以下の要素を考慮します:
+    - コンテナ（全体の枠）
+    - アイテム（中に配置する要素）
+    - 順序や配置
+    - レスポンシブデザイン
+
+---
+
+## Flexboxを使ってレイアウトを構築しよう
+- Flexboxは複雑なレイアウトも簡単に組むことができる書き方
+
+- Flexboxの基本的な書き方
+    - flexコンテナ(親要素)とflexアイテム(子要素)の２種類がある
+
+    ```html
+    <style>
+        .item {
+            background: #0bd;
+            color: #fff;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <body>
+        <div class="container"> <!-- flexコンテナ(親要素) -->
+            <div class="item">Item 1</div> <!-- flexアイテム(子要素) -->
+            <div class="item">Item 2</div> <!-- flexアイテム(子要素) -->
+            <div class="item">Item 3</div> <!-- flexアイテム(子要素) -->
+            <div class="item">Item 4</div> <!-- flexアイテム(子要素) -->
+        </div>
+    </body>
+    ```
+    上の状態だと縦にItemが４つ並ぶことになるが、ここに
+
+    ```css
+        . container {
+            display: flex;
+        }
+    ```
+    を入れると、横並びになる。
+
+    - また、`flex-direction`でレイアウトを変えることができる。
+    ```css
+        flex-direction:row; /* 子要素を左から右に配置 */
+        flex-direction:row-reserve; /* 子要素を右から左に配置 */
+        flex-direction:column; /* 子要素を上から下に配置 */
+        flex-direction:column-reserve; /* 子要素を下から上に配置 */
+    ```
+
+    - また、`flex-wrap`でレイアウトを変えることができる
+    ```css
+        flex-wrap: nowrap; /* 子要素を折り返しせずに一行に並べる */
+        flex-wrap: wrap; /* 子要素を折り返しして複数行に上から下へ並べる */
+        flex-wrap: wrap-reverse; /* 子要素を折り返しして複数行に下から上へ並べる */
+    ```
+
+    - 水平方向を揃える時には、`justify-content`を使うことができる。
+    ```css
+        justify-content: flex-start; /* 行の開始位置から左揃え */
+        justify-content: flex-end; /* 行の開始位置から右揃え */
+        justify-content: center; /* 中央揃え*/
+        justify-content: space-between; /* 最初と最後の要素を両端に配置して、残りは均等に配置 */
+        justify-content: space-around; /* 最初と最後の要素も含めて均等に配置 */
+    ```
+
+    - 垂直方向に揃える時には、`align-item`を使う
+    ```css
+        align-item: stretch; /* 親要素ないしはコンテンツの一番多い高さに合わせて広げて配置 */
+        align-item: flex-start; /* 親要素の開始位置から配置。上揃え */
+        align-item: flex-end; /* 親要素の開始位置から配置。下揃え */
+        align-item: center; /* 中央揃え */
+        align-item: baseline; /* ベースラインで揃える */
+    ```
+
+    - 複数行を揃える時には、`align-content`プロパティを使う
+    ```css
+        align-content: stretch; /* 親要素の高さに合わせて広げて配置 */
+        align-content: flex-start; /* 親要素の開始位置から配置。上揃え */
+        align-content: flex-end; /* 親要素の開始位置から配置。下揃え */
+        align-content: center; /* 中央揃え */
+        align-content: space-between; /* 最初と最後の子要素を上下の端に配置し、残り要素は均等に配置 */
+        align-content: space-around; /* 上下端にある子要素も含め、均等に間隔を空けて配置 */
+    ```
+
+---
+
+## CSSグリッドでタイル型に並べよう
+
+- flexboxと同様に親要素と子要素がある。
+```html
+<html>
+    <style>
+        .container {
+            display: grid;
+        }
+
+        .item {
+            background: #0bd;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+    <body>
+        <div class="container"> <!--親要素-->
+            <div class="item">Item 1</div> <!--子要素-->
+            <div class="item">Item 2</div> <!--子要素-->
+            <div class="item">Item 3</div> <!--子要素-->
+            <div class="item">Item 4</div> <!--子要素-->
+            <div class="item">Item 5</div> <!--子要素-->
+            <div class="item">Item 6</div> <!--子要素-->
+        </div>
+    </body>
+</html>
+```
+
+ここに、子要素の横幅を揃える`grid-template-columns`プロパティがある。
+```css
+    grid-template-columns: 200px 200px 200px;
+```
+上記の場合は、`200px`ずつ３つずつの横並びとなる。
+また、
+```css
+    gap:10px;
+```
+で、要素の幅を10pxずつ空けることができる。
+
+また、gridで使える単位として「`fr`」がある。
+例えば、
+```css
+    grid-template-columns: 1fr 1fr 1fr;
+```
+とした場合は、1：1：1で３つずつの配置ができる。
+
+また、子要素の高さを指定する場合は、`grid-template-rows`がある。
+```css
+    grid-template-rows: 200px 200px /* 1行目も2行目も高さは200pxということ*/
+```
+
+--- 
+
+## 読みやすいレイアウト
+- 視線の流れは２種類ある。
+    - Z型
+    - F型
+![F型とZ型](./img/F%20&%20Z.png)
+- 配置する順番や面積を考える
+
+---
+
+## リセットCSS
+- ブラウザによって、デフォルトのCSSが違う
+- そのため、リセットCSSを読み込ませるとブラウザごとの差異がなくなる
+``` html
+<head>
+    <link rel="stylesheet" href= "https;//unpkg.com/ress/dist/ress.min.css"> <!-- リセットCSS(必ず自作のCSSより上に持っていく -->
+    <link rel="stylesheet" href= "自作のCSSのパス">
+<head>
+```
