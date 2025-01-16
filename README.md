@@ -6,22 +6,9 @@
 
 リポジトリ内のディレクトリ構造は以下の通りです：
 .
-├── github/             # GitやGitHubの使い方に関するメモ
-├── バックエンド/
-│   ├── Laravel/        # Laravelに関する学習内容
-│   ├── PHP/            # PHPに関するメモ
-│   └── SQL/            # SQLのクエリやデータベース設計に関するメモ
-├── インフラ/
-│   ├── AWS/            # AWSに関する設定や学習メモ
-│   └── Docker/         # Dockerの使い方やTips
-├── フロントエンド/
-│   ├── CSS/            # CSSのデザインやレイアウトに関するメモ
-│   ├── HTML/           # HTMLの基礎や応用
-│   ├── JavaScript/     # JavaScriptやTypeScript、Vue.jsに関するメモ
-│   │   ├── Java Script/
-│   │   ├── Type Script/
-│   │   └── Vue.js/
-└── README.md           # このファイル
+├── github
+├── バックエンド
+└── フロントエンド
 
 ## 目的
 
