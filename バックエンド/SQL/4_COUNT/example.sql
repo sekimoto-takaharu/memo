@@ -50,12 +50,14 @@ INSERT
 ;
 
 -- SQL実行分
+    -- 50歳以上の人数を取得する
+    SELECT COUNT(*) FROM members WHERE age >= 50;
 
-    --  membersテーブルからheightカラムを取得する場合
-    SELECT height FROM members;
+    -- 50歳以上の人数と名前をつける場合
+    SELECT COUNT(*) AS "50歳以上の人数" FROM members WHERE age >= 50;
 
-    -- membersテーブルからheightカラムとweightカラムを取得する
-    SELECT height, weight FROM members;
-
-    -- 身長の単位をメートル(m)で表示し、身長の測定日と測定者を表示
-    SELECT height / 100, '2018-04-01', '吉田' FROM members;
+    -- 例：測定日や測定者を表示する場合
+    SELECT height / 100 AS height_m,
+    '2018-04-01' AS "測定日",
+    '吉田' AS "測定者"
+    FROM members;

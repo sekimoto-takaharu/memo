@@ -51,11 +51,11 @@ INSERT
 
 -- SQL実行分
 
-    --  membersテーブルからheightカラムを取得する場合
-    SELECT height FROM members;
+    -- 身長が180cm以上の人の名前を取り出す
+    SELECT name FROM members WHERE height >= 180;
 
-    -- membersテーブルからheightカラムとweightカラムを取得する
-    SELECT height, weight FROM members;
+    -- 身長が170cm以上**かつ**体重が70kg以下の人を取得
+    SELECT name FROM members WHERE height >= 170 AND weight <= 70;
 
-    -- 身長の単位をメートル(m)で表示し、身長の測定日と測定者を表示
-    SELECT height / 100, '2018-04-01', '吉田' FROM members;
+    -- 身長が180cm以上または160cm以下の人を取得
+    SELECT name FROM members WHERE height >= 180 OR height <= 160;

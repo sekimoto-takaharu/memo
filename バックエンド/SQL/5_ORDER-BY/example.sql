@@ -50,12 +50,3 @@ INSERT
 ;
 
 -- SQL実行分
-
-    --  membersテーブルからheightカラムを取得する場合
-    SELECT height FROM members;
-
-    -- membersテーブルからheightカラムとweightカラムを取得する
-    SELECT height, weight FROM members;
-
-    -- 身長の単位をメートル(m)で表示し、身長の測定日と測定者を表示
-    SELECT height / 100, '2018-04-01', '吉田' FROM members;
