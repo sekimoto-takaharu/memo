@@ -50,7 +50,11 @@ INSERT
 ;
 
 -- SQL実行分
-    -- membersテーブルのid=11に吉田さんを追加する
-    INSERT INTO members(id, name, height, weight, age, job_id)
-    VALUE (11, "吉田", 186.2, 97.1, 23, 5);
-    
+    -- membersテーブルのすべてのレコードを削除する
+    DELETE FROM members;
+
+    -- membersテーブルから,id=10の加藤さんを削除する
+    DELETE FROM members WHERE id = 10;
+
+    -- 伊藤さん(id=6)よりidが大きい人のレコードを削除
+    DELETE FROM members WHERE id > 6;

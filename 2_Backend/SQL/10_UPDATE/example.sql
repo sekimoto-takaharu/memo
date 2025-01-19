@@ -50,7 +50,15 @@ INSERT
 ;
 
 -- SQL実行分
-    -- membersテーブルのid=11に吉田さんを追加する
-    INSERT INTO members(id, name, height, weight, age, job_id)
-    VALUE (11, "吉田", 186.2, 97.1, 23, 5);
+    -- すべてのレコードのageカラムを30に変更する
+    UPDATE members SET age = 30;
     
+    -- 佐藤さんの身長を172.1cmに変更する
+    UPDATE members SET height = 172.1 WHERE id = 1;
+
+    -- members全員の年齢を1歳増やす
+    UPDATE members SET age = age + 1;
+
+    -- 鈴木さんの身長を1増やし、体重を10追加する
+    UPDATE members SET height = height + 1, weight = weight + 10 
+    WHERE id = 2;
