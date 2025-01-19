@@ -50,5 +50,6 @@ INSERT
 ;
 
 -- SQL実行分
--- 職種ごとの人数をカウントする
-SELECT job_id, COUNT(*) FROM members GROUP BY job_id;
+    -- job_idごとの人数を数えて、2人いたjob_idだけを取得する
+    SELECT job_id, COUNT(*) FROM members
+    GROUP BY job_id HAVING COUNT(*) = 2

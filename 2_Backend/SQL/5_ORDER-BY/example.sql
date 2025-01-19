@@ -50,5 +50,8 @@ INSERT
 ;
 
 -- SQL実行分
-    -- 職種ごとの人数をカウントする
-    SELECT job_id, COUNT(*) FROM members GROUP BY job_id;    
+    -- membersテーブルの名前(name)と年齢(age)を年齢の若い順に取得
+    SELECT name, age FROM members ORDER BY age;
+
+    -- membersテーブルの名前(name)と年齢(age)を年齢の高い順に取得
+    SELECT name, age FROM members ORDER BY age DESC;    

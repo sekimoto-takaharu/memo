@@ -50,5 +50,10 @@ INSERT
 ;
 
 -- SQL実行分
--- 職種ごとの人数をカウントする
-SELECT job_id, COUNT(*) FROM members GROUP BY job_id;
+    -- membersテーブルのjob_idとjobsテーブルのidを紐づけて結合する
+    SELECT * FROM members
+    INNER JOIN jobs ON jobs.id = members.job_id;
+
+    -- 10人分の名前と年収をそれぞれ取得する
+    SELECT members.name, jobs.salary FROM members
+    INNER JOIN jobs ON jobs.id = members.job_id;

@@ -50,5 +50,3 @@ INSERT
 ;
 
 -- SQL実行分
--- 職種ごとの人数をカウントする
-SELECT job_id, COUNT(*) FROM members GROUP BY job_id;
