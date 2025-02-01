@@ -83,3 +83,29 @@ switch文と繰り返し処理
         }
         console.log('for', k);
     }
+
+    // カンマ演算子
+    for (let a = 0, b = 10; a <= 10; a++, b--) { // カンマ演算子で複数の処理を同時に行うことができる
+        console.log('a:', a, 'b:', b);
+    }
+
+/** for ~ of文(配列の繰り返し) */
+    const fruits = ['apple', 'banana', 'grape'];
+    for (let fruit of fruits) { // 配列の要素を順番に取り出す(letをconstにしても問題ない)
+        console.log(fruit);
+    }
+
+    // 配列のインデックスも取得する
+    for (let fruit of fruits.entries()) { // entries()でインデックスも取得できる
+        console.log(i, fruit);
+    }
+
+/** for ~ in文(オブジェクトの繰り返し) */
+    const languages = {
+        ja: 'Japanese',
+        en: 'English',
+        fr: 'French'
+    };
+    for (let key in languages) { // オブジェクトのキーを取り出す
+        console.log(key, languages[key]);
+    }
