@@ -1,4 +1,6 @@
-/** try ~ catch文 */
+/** 
+try ~ catch文 
+*/
 
 // tryブロック内でエラーが発生すると、catchブロックが実行される
 let result = 0;
@@ -21,6 +23,7 @@ try {
 try {
     throw new Error('エラーが発生しました'); // throw文は、例外を発生させる
     console.log('この行は実行されません');
+    return;
     }
     catch (error) {
     console.log(error.message);
