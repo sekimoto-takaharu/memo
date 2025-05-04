@@ -143,3 +143,73 @@
 
     // 分割代入を使って、オブジェクトの中身を入れ替えることができる
     const {a: a1, b: b1, c: c1} = object13; // a1 = object13.a, b1 = object13.b, c1 = object13.c
+
+/** in演算子 */
+    console.log('a' in object13); // true(object13にaがあるかどうか)
+    console.log('d' in object13); // false(object13にdがあるかどうか)
+    if('a' in object13) {
+        console.log('aがあります');
+    }
+
+/** ?.(オプショナルチェーン) */
+    const object14 = {
+        a: {
+            b: {
+                c: 1,
+            }
+        }
+    }
+    console.log(object14.a.b.c); // 1
+    console.log(object14.a.b.d); // エラー
+    console.log(object14.a.b?.d); // undefined
+    console.log(object14.a.b?.c); // 1
+
+    // ?.(オプショナルチェーン)は、この記号の前のプロパティが存在しない場合、エラーを出さずにundefinedを返す
+
+/** thisとグローバルオブジェクト */
+    const object15 = {
+        a: 1,
+        b: 2,
+        c: function() {
+            console.log(this); // object15
+        }
+    }
+    object15.c();
+
+    function d() {
+        console.log(this); // グローバルオブジェクト
+    }
+    d();
+
+    // アロー関数の場合
+    const object16 = {
+        a: 1,
+        b: 2,
+        c: () => {
+            console.log(this); // グローバルオブジェクト
+        }
+    }
+    object16.c();
+
+    // アロー関数は、thisを持たないため、グローバルオブジェクトを参照する
+
+/** オブジェクトのメソッドの中でのthis */
+    const object17 = {
+        a: 1,
+        b: 2,
+        c: function() {
+            console.log(this); // object17
+        }
+    }
+    object17.c();
+
+    const object18 = {
+        a: 1,
+        b: 2,
+        c: () => {
+            console.log(this); // グローバルオブジェクト
+        }
+    }
+    object18.c();
+
+    // オブジェクトのメソッドの中でのthisは、そのオブジェクトを参照する
